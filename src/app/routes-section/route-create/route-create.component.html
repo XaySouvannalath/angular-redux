@@ -1,0 +1,16 @@
+ 
+<input class="form-control" [(ngModel)]="model.path" name="path" #path="ngModel"> 
+<input class="form-control" [(ngModel)]="model.component" name="component" #component="ngModel">
+
+    <button  (click)="post()" class="btn btn-primary">Add</button>
+ 
+ 
+
+
+    <div  *ngFor="let r of routes | async" class="card">
+      <p>Path: /{{r.path}}</p>
+      <p>Component: {{r.component}}</p>
+      <button (click)="delete(r.id)">remove</button>
+    </div>
+ 
+    
